@@ -1,4 +1,3 @@
-// RF01 — Registro do pedido
 const cliente = "Lucas Almeida"
 const produto = "Notebook Gamer"
 const preco = 4500
@@ -6,26 +5,22 @@ const quantidade = 2
 const estoque = 10
 const valorPago = 9000
 
-// RF02 — Cálculo do subtotal
 const subtotal = preco * quantidade
 
-// RF03 — Verificação do estoque
-const estoqueDisponivel = quantidade <= estoque
 
-// RF04 — Aplicação de desconto
+const estoqueDisponivel = quantidade <= estoque ? "Sim" : "Não";
+
+
 const descontoPercentual = subtotal >= 1000 ? 10 : 0
 const valorDesconto = subtotal * (descontoPercentual / 100)
 
-// RF05 — Cálculo do valor final
 const valorFinal = subtotal - valorDesconto
 
-// RF06 — Verificação do pagamento
 const pagamentoStatus =
     valorPago >= valorFinal
         ? "Pagamento aprovado"        
         : "Pagamento insuficiente"
 
-// RF07 — Cálculo do troco
 const troco = valorPago >= valorFinal
     ? valorPago - valorFinal
     : 0
